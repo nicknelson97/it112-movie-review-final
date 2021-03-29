@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Movie List</h1>
+<table class='table'>
+ <tr>
+     <th>Title</th>
+     <th>Date</th>
+ </tr>
+ {% for m in movie_list %} 
+   <tr>
+       <td><a href="{% url 'moviedetails' id=m.id %}">{{ m.mtitle }}</a></td>
+       <td>{{ m.mdate }}</td>
+   </tr>
+
+ {% endfor %}
+
+
+</table>
+
+
+{% endblock %}
